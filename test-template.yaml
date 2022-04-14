@@ -1,0 +1,34 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: sample-template
+  title:  Onboarding
+  description: Onboarding through Backstage!
+spec:
+  owner: dd
+  type: resource
+  parameters:
+    - title: We need a few things...
+      required:
+        - name
+        - owner
+        - namespace
+      properties:
+        name:
+          title: Name
+          type: string
+          description: The name 
+          pattern: "((?=[^\\&\/<>])[ -~])*$"
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+        owner:
+          title: Owner
+          type: string
+          description: An open string to define who owns this resource. This should align with a service catalog group, but goes unverified.
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds:
+              - Group
+              - User
+  
