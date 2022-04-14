@@ -38,4 +38,7 @@ spec:
       input:
         name: ${{ parameters.name }}
         owner: ${{ parameters.owner }}
+  output:
+    getToken: '${{ steps.onboarding_api.output.token }}'
+    getName: '${{ steps.onboarding_api.output.name }}'      
     
