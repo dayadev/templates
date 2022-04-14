@@ -31,4 +31,11 @@ spec:
             allowedKinds:
               - Group
               - User
-  
+  steps:
+    - id: onboarding_api
+      name: POST  API
+      action: oi:onboard
+      input:
+        name: ${{ parameters.name }}
+        owner: ${{ parameters.owner }}
+    
